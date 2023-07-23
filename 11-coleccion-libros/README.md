@@ -59,3 +59,14 @@ Si quieres contribuir al proyecto, puedes hacer lo siguiente:
 Si tienes alguna pregunta sobre el proyecto, puedes abrir una nueva issue en el repositorio de GitHub.
 
 Espero que este proyecto te sea útil. ¡Gracias por tu interés!
+
+## Actualizaciones
+Se agregó un mensaje "Libro agregado a la colección" al agregar libro, y lo agrega también al local storage.
+Se agregó la opción de eliminar libro de la colección.
+Cómo usar las nuevas características
+Para usar las nuevas características, primero debes actualizar el proyecto a la última versión. Una vez que el proyecto esté actualizado, puedes usar las nuevas características de la siguiente manera:
+
+Para agregar un nuevo libro, simplemente completa el formulario en la interfaz de usuario y haz clic en el botón "Agregar libro". El libro se agregará a la colección y se guardará en el local storage.
+Para eliminar un libro de la colección, simplemente haz clic en el botón "Eliminar" junto al libro que quieres eliminar. El libro se eliminará de la colección y se borrará del local storage.
+
+Espero que esta documentación te ayude a usar el proyecto Colección de libros.

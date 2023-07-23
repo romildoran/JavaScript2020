@@ -27,8 +27,10 @@ class UI {
         lista.appendChild(fila);
     }
 
-    static eliminarLibros() {
-
+    static eliminarLibros(el) {
+        if(el.classList.contains('delete')){
+            el.parentElement.parentElement.remove();
+        }
     }
 
     static mostrarAlerta(mensaje, className) {
@@ -70,7 +72,15 @@ class Datos {
     }
 
     static removerLibro(isbn) {
+        const libros = Datos.traerLibros();
+        console.log(isbn);
 
+        libros.forEach((libro, index)=>{
+            if(libro.isbn === isbn) {
+                libros.splice(index, 1);
+            }
+        });
+        localStorage.setItem("libros", JSON.stringify(libros));
     }
 }
 
@@ -93,6 +103,13 @@ document.querySelector('#libro-form').addEventListener('submit', (e) => {
         const libro = new Libro(titulo, autor, isbn);
         Datos.agregarLibro(libro);
         UI.agregarLibroLista(libro);
+        UI.mostrarAlerta('Libro agregado a la colección', 'success');
         UI.limpiarCampos();
     }
 });
+
+document.querySelector('#libro-list').addEventListener('click', (e)=>{
+    UI.eliminarLibros(e.target);
+    Datos.removerLibro(e.target.parentElement.previousElementSibling.textContent);
+    UI.mostrarAlerta("Libro eliminado", 'success');
+})
